@@ -5,7 +5,7 @@ import LineChart from './components/LineChart';
 import KPICard from './components/KPICard';
 import './styles/Dashboard.css';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://real-time-kpi-dashboard.onrender.com');
 
 function App() {
   const [kpiData, setKpiData] = useState([]);
@@ -54,7 +54,7 @@ function App() {
 
     for (const kpi of sampleKPIs) {
       try {
-        await fetch('http://localhost:5000/api/kpis', {
+        await fetch('https://real-time-kpi-dashboard.onrender.com/api/kpis', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(kpi)
